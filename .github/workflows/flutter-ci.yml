@@ -19,7 +19,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 3.16.0  # Change to the latest Flutter version
+          flutter-version: 3.16.0
           cache: true
 
       - name: Install dependencies
@@ -38,7 +38,7 @@ jobs:
           flutter build web
 
       - name: Upload Web Build (Optional)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # UPDATED TO v4
         with:
           name: flutter-web-build
           path: perfect/build/web
@@ -49,7 +49,7 @@ jobs:
           flutter build apk --release
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # UPDATED TO v4
         with:
           name: release-apk
           path: perfect/build/app/outputs/flutter-apk/app-release.apk
